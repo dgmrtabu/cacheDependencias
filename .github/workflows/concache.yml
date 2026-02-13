@@ -10,5 +10,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: npm install # Descarga todo cada vez (lento)
+          cache: 'npm' # Cache automático de npm
+      - run: npm ci # Usa cache, mucho más rápido
       - run: npm test
